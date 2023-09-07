@@ -21,3 +21,30 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 kubectl version --client	
 kubectl version --client --output=yaml	
 ```
+### Start minikube (using docker as driver)
+```
+minikube start –driver=docker
+```
+### Deploy configuration files
+```
+kubectl apply -f mongo-config.yaml 
+kubectl apply -f mongo-secret.yaml 
+kubectl apply -f mongo.yaml 
+kubectl apply -f webapp.yaml
+```
+### Finding ip of minikube
+```
+minikube ip
+```
+or
+```
+kubectl get node -o wide
+```
+### Kubectl basic interface commands
+```
+kubectl get *<all|configmap|secret|pod|service>*
+
+kubectl describe service webapp-service
+kubectl logs mongo-deployment-85d45f7888-gjvf4
+kubectl logs mongo-deployment-85d45f7888-gjvf4 -f //streamed log
+```
