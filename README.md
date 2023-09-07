@@ -42,7 +42,7 @@ kubectl get node -o wide
 ```
 ### Kubectl basic interface commands
 ```
-kubectl get *<all|configmap|secret|pod|service>*
+kubectl get * <all|configmap|secret|pod|service> *
 
 kubectl describe service webapp-service
 kubectl logs mongo-deployment-85d45f7888-gjvf4
